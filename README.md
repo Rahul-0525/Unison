@@ -18,6 +18,10 @@ The core mission behind Unison is to explore and demonstrate the power of AI-ass
 
 ## ✨ Features
 
+- 🖥️ **Standalone Desktop App (Electron & Windows Installer)**:
+  - Packaged as a native desktop application for Windows with an automated setup installer (`Unison Setup 1.0.0.exe`).
+  - Bundles the Python runtime and dependencies directly—no need for end users to install Python, git, or command-line tools manually.
+  - Serves as the primary desktop master player while mobile devices and laptops join effortlessly over Wi-Fi.
 - 🔊 **Sub-Millisecond Multi-Device Sync**:
   - Plays the exact same audio stream simultaneously across any number of devices on your Wi-Fi/LAN (smartphones, PCs, laptops, tablets, speakers).
   - Uses an NTP-style continuous clock synchronization protocol over WebSockets.
@@ -98,19 +102,36 @@ Audio synchronization over heterogeneous Wi-Fi networks requires sub-millisecond
 
 ---
 
-## 🚀 Quick Start
+## 💻 Download & Installation Options
 
-### Prerequisites
+You can run Unison either as an **all-in-one native Desktop App** (no terminal needed) or by **running from source** with Python.
+
+### Option 1: Standalone Desktop App (Windows Installer) ⚡
+
+For end users who don't want to deal with Python, terminal commands, or dependencies:
+
+1. Head over to the **[Releases](../../releases)** tab on GitHub.
+2. Download **`Unison Setup 1.0.0.exe`**.
+3. Run the installer to set up Unison on your Windows PC.
+4. Launch **Unison** from your Start Menu or Desktop!
+   - The app automatically launches the embedded background sync server and native desktop window.
+   - Any phone, tablet, or guest PC on your Wi-Fi can immediately scan the on-screen QR code and play in sync.
+
+---
+
+### Option 2: Run From Source (Python & Web)
+
+#### Prerequisites
 - **Python 3.9+** installed
 - **ffmpeg** installed and available in your system `PATH` (required by `yt-dlp` for audio extraction)
 
-### 1. Clone the Repository
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/<your-username>/unison.git
 cd unison
 ```
 
-### 2. Set Up Virtual Environment & Dependencies
+#### 2. Set Up Virtual Environment & Dependencies
 ```bash
 # Create virtual environment
 python -m venv .venv
@@ -127,14 +148,14 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Run the Server
+#### 3. Run the Server
 ```bash
 python server.py
 ```
 
 By default, the server listens on port **8765** (`0.0.0.0:8765`).
 
-### 4. Connect Your Devices
+#### 4. Connect Your Devices
 - **Host (Master PC)**: Open `http://localhost:8765` in your browser.
 - **Guest Devices (Smartphones, Tablets, Laptops)**:
   1. Make sure the device is connected to the **same Wi-Fi / Local Network**.
@@ -160,7 +181,8 @@ unison/
 └── README.md         # Project documentation and guide
 ```
 
-> **Note**: Build directories (`desktop app/`, `cache/`, `uploads/`, and virtual environments `.venv/`) are intentionally excluded via `.gitignore` to keep the core repository clean and lightweight.
+> **Note on Desktop App & Build Outputs**:  
+> Unison has also been converted into a standalone Electron desktop application bundled with an embedded Python engine and installer (`Unison Setup 1.0.0.exe`). The local `desktop app/` build folder and virtual environments (`.venv/`) are excluded from Git to keep the core repository clean and lightweight. Setup installers can be uploaded directly to GitHub Releases for users to download.
 
 ---
 
