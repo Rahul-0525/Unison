@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Unison Audio Caches and Uploads
+cache/
+uploads/
+*.webm
+*.m4a
+*.mp3
+*.ogg
+*.opus
+*.flac
+*.wav
+*.mp4
+
+# Allow project immersion sound assets
+!resources/
+!resources/*
+
+# Desktop App (Standalone Electron app & build outputs)
+desktop app/
+desktop-app/
+node_modules/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Antigravity / AI assistant local scratch & logs
+.antigravity/
+.gemini/
+
+# Logs
+*.log
